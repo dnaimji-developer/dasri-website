@@ -1,0 +1,33 @@
+{
+  "name": "dasri_portfolio_site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss public/stylesheets/style.css -w",
+    "compile:sass": "node-sass sass/main.scss public/stylesheets/style.css",
+    "compress:css": "node-sass public/stylesheets/style.css public/stylesheets/style.min.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass compress:css",
+    "dev-start": "npm-run-all watch:sass",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Dasri Naimji",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^7.4.2",
+    "connect-flash": "^0.1.1",
+    "connect-redis": "^5.1.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "ejs-mate": "^3.0.0",
+    "express": "^4.17.1",
+    "express-sanitizer": "^1.0.5",
+    "express-session": "^1.17.1",
+    "redis": "^3.0.2"
+  },
+  "devDependencies": {
+    "node-sass": "^5.0.0",
+    "npm-run-all": "^4.1.5"
+  }
+}

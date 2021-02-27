@@ -1,0 +1,71 @@
+//background
+$bg-color--body: #f1f3f2;
+//border
+$border--radius: 10px;
+//margin/padding
+$margin--container: 1.5rem;
+$padding--section: 3rem;
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+1200 - 1800:    Desktop
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- desktop
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+$tab-port: 37.5em; // 600px/16px = 37.5em
+$tab-port--medium: 46.875em;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 50%;
+
+  @media only screen and (min-width: $tab-port) {
+    font-size: 62.5%; // font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px
+  }
+}
+
+.container {
+  background-color: $bg-color--body;
+  display: grid;
+  grid-template-rows: min-content 85vh repeat(4, min-content);
+  grid-template-columns: [margin-left-start] $margin--container [margin-left-end center-start] 1fr [center-end margin-right-start] $margin--container [margin-right-end];
+  gap: $margin--container 0;
+}
+
+.section {
+  border-radius: $border--radius;
+  padding: $padding--section;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+
+  &--centered {
+    @extend .flex-col;
+    align-items: center;
+    justify-content: center;
+  }
+}
