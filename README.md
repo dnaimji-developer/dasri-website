@@ -1,3 +1,3 @@
 # Dasri's Website
 
-Dasri Naimji's personal website
+For those curious about the source code to my website - here it is! Enjoy!
