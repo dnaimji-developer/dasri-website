@@ -1,0 +1,97 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+1200 - 1800:    Desktop
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- desktop
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 50%;
+}
+@media only screen and (min-width: 37.5em) {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
+  background-color: #5cdb95;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+canvas {
+  border: solid #edf5e1 5px;
+  border-radius: 15px;
+}
+
+.header {
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  background-color: #379683;
+}
+
+.header__nav {
+  font-family: "Big Shoulders Display", cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.header__nav .link {
+  text-decoration: none;
+  color: #8ee4af;
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+
+.header__nav .link:hover {
+  font-weight: bold;
+}
+
+.footer {
+  padding: 2rem 0;
+  background-color: #379683;
+  color: #8ee4af;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Permanent Marker", cursive;
+  font-size: 1.2rem;
+}

@@ -1,0 +1,89 @@
+//fonts
+$font-family--primary: "Roboto", sans-serif;
+$font-family--heading: "Teko", sans-serif;
+$font-family--hero--name: "Prompt", sans-serif;
+$font-family--hero--position: "Montserrat", sans-serif;
+$font-family--paragraph: "Roboto Slab", serif;
+$font-family--button: "Roboto", sans-serif;
+
+//colors
+$color: #f1f3f2;
+$color--selection: #f1f3f2;
+$color--link: #c1403d;
+$color--link--active: #04060f;
+$color--button: #f1f3f2;
+
+$color--heading: #04060f;
+$color--paragraph: #04060f;
+$color--hero--name: #c1403d;
+$color--hero--position: #f1f3f2;
+
+//border
+$border--radius--button: 10px;
+
+::selection {
+  background-color: #a79c93;
+  color: $color--selection;
+}
+
+.container {
+  font-family: $font-family--primary;
+  color: $color;
+  line-height: 1.6;
+}
+
+.section {
+  text-align: center;
+}
+
+.paragraph {
+  font-size: 1.6rem;
+  font-family: $font-family--paragraph;
+}
+
+.heading-1 {
+  font-family: $font-family--hero--name;
+  font-size: 6rem;
+  color: $color--hero--name;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  line-height: 1;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+}
+
+.heading-2 {
+  font-family: $font-family--heading;
+  font-size: 5rem;
+  color: $color--heading;
+  text-transform: uppercase;
+  line-height: 1;
+
+  &--hero {
+    font-family: $font-family--hero--position;
+    font-size: 2rem;
+    font-weight: bold;
+    color: $color--hero--position;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+  }
+}
+
+.heading-3 {
+  font-family: $font-family--heading;
+  font-size: 3rem;
+  color: $color--heading;
+}
+
+.mb-sm {
+  margin-bottom: 2rem;
+}
+.mb-md {
+  margin-bottom: 3rem;
+}
+.mb-lg {
+  margin-bottom: 4rem;
+}
+.mb-xl {
+  margin-bottom: 8rem;
+}

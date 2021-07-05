@@ -1,0 +1,117 @@
+//background
+$bg-color--projects: #0294a5;
+$bg-color--button: #03353e;
+$bg-color--pill: #a79c93;
+//color
+$color--paragraph: #f1f3f2;
+//border
+$border--color: #03353e;
+$border--radius: 10px;
+
+#projects {
+  grid-column: center-start / center-end;
+  grid-row: 4 / 5;
+
+  background-color: $bg-color--projects;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr);
+  grid-template-rows: repeat(3, min-content);
+  grid-template-areas: "img" "title" "description";
+  justify-items: center;
+  justify-content: center;
+  row-gap: 0.5rem;
+  margin-bottom: 2rem;
+
+  &__img {
+    grid-area: img;
+
+    display: grid;
+    grid-template-columns: minmax(100px, 250px);
+
+    padding-top: 3px;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: $border--radius;
+      border: 3px solid $border--color;
+    }
+  }
+
+  &_title {
+    grid-area: title;
+  }
+
+  &_description {
+    grid-area: description;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+
+    color: $color--paragraph;
+    text-align: center;
+
+    .technologies {
+      .technology {
+        display: inline-block;
+        padding: 0.3em 1.2em;
+        margin: 0 0.3em 0.3em 0;
+        border: 2px solid $border--color;
+        border-radius: 2em;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: "Roboto", sans-serif;
+        font-size: 1.2rem;
+        font-weight: 300;
+        color: $color--button;
+        background-color: $bg-color--pill;
+        text-align: center;
+        transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+      }
+    }
+
+    .links {
+      .link {
+        display: inline-block;
+        padding: 0.3em 1.2em;
+        margin: 0 0.3em 0.3em 0;
+        border: 2px solid $border--color;
+        border-radius: 2em;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: "Roboto", sans-serif;
+        font-size: 1.6rem;
+        font-weight: 300;
+        color: $color--button;
+        background-color: transparent;
+        text-align: center;
+        transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+
+        &:hover {
+          box-shadow: 0 0 40px 40px $bg-color--button inset;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $tab-port--medium) {
+  .project {
+    display: grid;
+    grid-template-columns: minmax(200px, 220px) repeat(2, minmax(200px, 250px));
+    grid-template-rows: repeat(2, min-content);
+    grid-template-areas: ". title title" "img description description";
+    row-gap: 0.5rem;
+    column-gap: 2rem;
+    justify-items: start;
+    justify-content: center;
+
+    &_description {
+      text-align: start;
+    }
+  }
+}

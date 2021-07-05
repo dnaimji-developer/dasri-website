@@ -1,0 +1,139 @@
+<% layout('layouts/home') %>
+    <div class="hero">
+        <div class="content">
+            <h1 class="heading-1">Dasri Naimji</h1>
+            <h2 class="heading-2--hero">Junior Developer</h2>
+        </div>
+    </div>
+    <section id="about" class="section flex-col">
+        <h2 class="section-heading heading-2">About Me</h2>
+        <div class="section-content profile">
+            <figure class="profile__pic">
+                <img src="/imgs/profile_pic.jpg" alt="Dasri profile pic">
+            </figure>
+            <div class="profile__text">
+                <p class="paragraph">Dasri Naimji is a recent computer science graduate from the University of
+                    Toronto, looking for an opportunity to step into a junior developer position. His university
+                    experience has given him exposure to several major programming languages (Java, Python, C);
+                    however, since graduating, he has focused on expanding his knowledge of web development
+                    technologies. In particular, he has pursued a self-study path centred around CSS3, HTML5, and
+                    Javascript (ES6+). His path has also included off-shoot libraries, frameworks, and associated
+                    backend technologies, such as React, Express, Node.js, and MongoDB.</p>
+                <p class="paragraph">While Dasri is always looking to expand his skillset as a burgeoning developer,
+                    his enthusiasm for learning goes well beyond programming. Depending on the season, you can
+                    find him trying his hand at ice skating, floor hockey, Ultimate frisbee, or Brazilian Jiu
+                    Jitsu.
+                    He has also been known to bring comedic flair to party games like Charades and Salad Bowl, and
+                    possesses a wide range of general knowledge. (Ask him to watch Jeopardy with you!)</p>
+                <p class="paragraph">With a fervent attention
+                    to detail and a great deal of tenacity, he aims to excel at everything he does.</p>
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="section flex-col">
+        <h2 class="section-heading heading-2">Recent Projects</h2>
+        <div class="section-content projects">
+            <div class="project">
+                <figure class="project__img">
+                    <a href="#projects">
+                        <img src="/imgs/you_are_here.jpg" alt="You Are Here thumbnail">
+                    </a>
+                </figure>
+                <h3 class="project_title heading-3">Personal Website</h3>
+                <div class="project_description">
+                    <p class="blurb paragraph">This website! I made it! Amazing!</p>
+                    <div class="technologies">
+                        <span class="technology">HTML5</span>
+                        <span class="technology">CSS3/SCSS</span>
+                        <span class="technology">Javascript</span>
+                        <span class="technology">Node.js</span>
+                        <span class="technology">Express</span>
+                    </div>
+                    <div class="links">
+                        <a class="link" href="https://github.com/dnaimji-developer/dasri-website">Source</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <figure class="project__img">
+                    <a href="http://www.smitaseats.com/">
+                        <img src="/imgs/smitas_eats.jpg" alt="Smita's Eats thumbnail">
+                    </a>
+                </figure>
+                <h3 class="project_title heading-3">Smita's Eats</h3>
+                <div class="project_description">
+                    <p class="blurb paragraph">A web application for a lively YouTube cooking show that features a home
+                        chef making delicious Indian vegetarian dishes</p>
+                    <div class="technologies">
+                        <span class="technology">HTML5</span>
+                        <span class="technology">CSS3</span>
+                        <span class="technology">Bootstrap</span>
+                        <span class="technology">Javascript</span>
+                        <span class="technology">Node.js</span>
+                        <span class="technology">Express</span>
+                    </div>
+                    <div class="links">
+                        <a class="link" href="http://www.smitaseats.com/">View</a>
+                        <a class="link" href="https://github.com/dnaimji-developer/smitaseats">Source</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <figure class="project__img">
+                    <a href="/game">
+                        <img src="/imgs/tap_tap_bug.jpg" alt="Tap Tap Bug thumbnail">
+                    </a>
+                </figure>
+                <h3 class="project_title heading-3">Tap Tap Bug</h3>
+                <div class="project_description">
+                    <p class="blurb paragraph">An HTML5 canvas game where players smash different kinds of bugs to win
+                    </p>
+                    <div class="technologies">
+                        <span class="technology">HTML5</span>
+                        <span class="technology">CSS3/SCSS</span>
+                        <span class="technology">Javascript</span>
+                        <span class="technology">Phaser 3</span>
+                    </div>
+                    <div class="links">
+                        <a class="link" href="/game">View</a>
+                        <a class="link" href="https://github.com/dnaimji-developer/taptapbug">Source</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="section flex-col--centered">
+        <h2 class="section-heading heading-2">Get In Touch</h2>
+        <div class="section-content contact">
+            <form action="/contact" method="POST" class="contact-form">
+                <input type="text" id="name" name="name" placeholder="Name" maxlength="50" required>
+                <input type="email" id="email" name="email" placeholder="Email" maxlength="50" required>
+                <textarea rows="10" id="message" name="message" placeholder="Message" maxlength="1000"></textarea>
+                <button type="submit">
+                    <span class="left">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/email-icon.svg" alt="">
+                    </span>
+                    <span class="right">SUBMIT</span>
+                </button>
+                <button type="reset">
+                    <span class="left">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/eraser-icon.svg" alt="">
+                    </span>
+                    <span class="right">RESET</span>
+                </button>
+            </form>
+            <div id="contact-confirmation" class="contact-confirmation">
+                <% if(success && success.length> 0 ){ %>
+                    <div class="alert alert-success" role="alert">
+                        <%= success %>
+                    </div>
+                    <% } %>
+                        <% if(error && error.length> 0 ){ %>
+                            <div class="alert alert-danger" role="alert">
+                                <%= error %>
+                            </div>
+                            <% } %>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript" src="/scripts/home/home.js"></script>

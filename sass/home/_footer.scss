@@ -1,0 +1,19 @@
+//background
+$bg-color--footer: #04060f;
+//color
+$color--footer: #c1403d;
+//fonts
+$font-family--footer: "Permanent Marker", cursive;
+
+.footer {
+  grid-column: margin-left-start / margin-right-end;
+  grid-row: 6 / 7;
+  padding: 2rem 0;
+
+  background-color: $bg-color--footer;
+  color: $color--footer;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: $font-family--footer;
+  font-size: 1.2rem;
+}

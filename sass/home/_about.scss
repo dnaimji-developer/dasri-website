@@ -1,0 +1,40 @@
+//backgound
+$bg-color--about: #c2d3da;
+//color
+$color--paragraph: #03353e;
+//border
+$border--radius: 10px;
+$border--color: #04060f;
+
+#about {
+  grid-column: center-start / center-end;
+  grid-row: 3 / 4;
+
+  background-color: $bg-color--about;
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 650px));
+  justify-content: center;
+  row-gap: 1rem;
+  column-gap: 2rem;
+
+  &__pic {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: $border--radius;
+      border: 3px solid $border--color;
+    }
+  }
+
+  &__text {
+    .paragraph {
+      color: $color--paragraph;
+      text-align: justify;
+      margin-bottom: 1rem;
+    }
+  }
+}

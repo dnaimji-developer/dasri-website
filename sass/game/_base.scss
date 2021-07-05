@@ -1,0 +1,70 @@
+//fonts
+$font-family--title: "Bangers", cursive;
+//background
+$bg-color--body: #5cdb95;
+//border
+$border--radius: 15px;
+$border--color: #edf5e1;
+//color
+$color--title: #05386b;
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+1200 - 1800:    Desktop
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- desktop
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+$tab-port: 37.5em; // 600px/16px = 37.5em
+$tab-port--medium: 46.875em;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 50%;
+
+  @media only screen and (min-width: $tab-port) {
+    font-size: 62.5%; // font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px
+  }
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
+
+  background-color: $bg-color--body;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+canvas {
+  border: solid $border--color 5px;
+  border-radius: $border--radius;
+}

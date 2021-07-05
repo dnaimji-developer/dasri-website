@@ -1,0 +1,31 @@
+//background
+$bg-color--hero: #04060f;
+
+.hero {
+  grid-column: margin-left-start / margin-right-end;
+  grid-row: 2 / 3;
+  position: relative;
+  z-index: -1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image: linear-gradient(
+      rgba($bg-color--hero, 0.7),
+      rgba($bg-color--hero, 0.7)
+    ),
+    url("/imgs/cover.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    row-gap: 0.5rem;
+  }
+}

@@ -1,0 +1,110 @@
+//background
+$bg-color--contact: #c2d3da;
+$bg-color--form: #03353e;
+$bg-color--success: #84a45a;
+$bg-color--danger: #d53c3c;
+//color
+$color: #f1f3f2;
+//borders
+$border-color: #04060f;
+$border--width: 1px;
+$border--radius: 10px;
+
+#contact {
+  grid-column: center-start / center-end;
+  grid-row: 5 / 6;
+
+  background-color: $bg-color--contact;
+  color: $color;
+
+  .contact {
+    display: grid;
+    grid-template-columns: minmax(250px, 300px);
+    grid-template-rows: repeat(2, min-content);
+    row-gap: 2rem;
+
+    @media only screen and (min-width: $tab-port) {
+      grid-template-columns: minmax(300px, 750px);
+    }
+  }
+
+  .contact-form {
+    display: grid;
+    gap: 1rem;
+
+    @media only screen and (min-width: $tab-port) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    & > * {
+      background-color: $bg-color--form;
+      color: $color;
+      font-weight: bold;
+      width: 100%;
+      line-height: 1.5;
+      padding: 15px 10px;
+      outline: none;
+      border: $border--width solid $border-color;
+      transition: all 0.15s ease;
+    }
+
+    textarea {
+      resize: none;
+      grid-column: 1 / -1;
+    }
+
+    button {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+
+      & > * {
+        display: inline-block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        transition: transform 0.4s ease-in-out;
+      }
+    }
+
+    .left {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-150%, -50%);
+    }
+
+    .right {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    & :hover .left {
+      transform: translate(-50%, -50%);
+    }
+
+    & :hover .right {
+      transform: translate(50%, -50%);
+    }
+  }
+
+  .contact-confirmation {
+    .alert {
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: $border--radius;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    .alert-success {
+      background-color: $bg-color--success;
+    }
+
+    .alert-danger {
+      background-color: $bg-color--danger;
+    }
+  }
+}
